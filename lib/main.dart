@@ -19,7 +19,21 @@ class MyApp extends StatelessWidget {
           title: Text('My first project'),
         ),
         body: Column(
-          children: [],
+          children: [
+            Text('The question!'),
+            RaisedButton(
+              child: Text('Answer 1'),
+              onPressed: null,
+            ),
+            RaisedButton(
+              child: Text('Answer 1'),
+              onPressed: null,
+            ),
+            RaisedButton(
+              child: Text('Answer 1'),
+              onPressed: null,
+            ),
+          ],
         ),
       ),
     );
