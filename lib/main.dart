@@ -26,7 +26,8 @@ class MyAppState extends State {
   Widget build(BuildContext context) {
     var questions = [
       'what\'s your favorite color?',
-      'what\'s your favorite color?' 'what\'s your favorite color?'
+      'what\'s your favorite place?',
+      'what\'s your favorite color?'
     ];
     return MaterialApp(
       home: Scaffold(
