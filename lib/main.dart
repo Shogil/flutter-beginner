@@ -49,8 +49,6 @@ class MyAppState extends State {
               child: Text('Answer 1'),
               onPressed: () {
                 //.....
-                //.....
-
                 print('Answer 3 choosen');
               },
             ),
