@@ -2,15 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sample_project/question.dart';
 import 'package:flutter_sample_project/answer.dart';
 
-// void main(List<String> args) {
-//   runApp(MyApp());
-// }
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _MyAppState();
   }
 }
@@ -27,9 +23,18 @@ class _MyAppState extends State {
   @override
   Widget build(BuildContext context) {
     var questions = [
-      'what\'s your favorite color?',
-      'what\'s your favorite place?',
-      'what\'s your favorite color?'
+      {
+        'questionText': 'what\'s your favorite color?',
+        'answer ': ['Red', 'blue', 'black', 'green'],
+      },
+      {
+        'questionText': 'what\'s your favorite Animal?',
+        'answer ': ['Monkey', 'Lion', 'panda', 'Jiraffe'],
+      },
+      {
+        'questionText': 'what is your Place?',
+        'answer ': ['Kerala', 'Goa', 'Tamil nadu', 'Karnataka'],
+      }
     ];
     return MaterialApp(
       home: Scaffold(
@@ -39,11 +44,12 @@ class _MyAppState extends State {
         body: Column(
           children: [
             Question(
-              questions[_questionIndex],
+              questions[_questionIndex]['questionText'] as String,
             ),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
+            (questions[_questionIndex]['answers'] as List<String>)
+                .map((answer) {
+              return Answer(_answerQuestion, answer);
+            })
           ],
         ),
       ),
