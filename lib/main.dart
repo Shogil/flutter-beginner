@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample_project/question.dart';
 import 'package:flutter_sample_project/answer.dart';
+import 'package:flutter_sample_project/quiz.dart';
+import 'package:flutter_sample_project/result.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,7 +25,7 @@ class _MyAppState extends State {
 
   @override
   Widget build(BuildContext context) {
-    final questions = const [
+    final _questions = const [
       {
         'questionText': 'what\'s your favorite color?',
         'answer': ['Red', 'blue', 'black', 'green'],
@@ -42,21 +44,13 @@ class _MyAppState extends State {
         appBar: AppBar(
           title: Text('My first project'),
         ),
-        body: _questionIndex < questions.length
-            ? Column(
-                children: [
-                  Question(
-                    questions[_questionIndex]['questionText'] as String,
-                  ),
-                  ...(questions[_questionIndex]['answer'] as List<String>)
-                      .map((answer) {
-                    return Answer(_answerQuestion, answer);
-                  }).toList()
-                ],
+        body: _questionIndex < _questions.length
+            ? Quiz(
+                answerQuestion: _answerQuestion,
+                questionIndex: _questionIndex,
+                questions: _questions,
               )
-            : Center(
-                child: Text('You did it!'),
-              ),
+            : Result(),
       ),
     );
   }
