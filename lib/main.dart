@@ -42,17 +42,21 @@ class _MyAppState extends State {
         appBar: AppBar(
           title: Text('My first project'),
         ),
-        body: Column(
-          children: [
-            Question(
-              questions[_questionIndex]['questionText'] as String,
-            ),
-            ...(questions[_questionIndex]['answer'] as List<String>)
-                .map((answer) {
-              return Answer(_answerQuestion, answer);
-            }).toList()
-          ],
-        ),
+        body: _questionIndex < questions.length
+            ? Column(
+                children: [
+                  Question(
+                    questions[_questionIndex]['questionText'] as String,
+                  ),
+                  ...(questions[_questionIndex]['answer'] as List<String>)
+                      .map((answer) {
+                    return Answer(_answerQuestion, answer);
+                  }).toList()
+                ],
+              )
+            : Center(
+                child: Text('You did it!'),
+              ),
       ),
     );
   }
