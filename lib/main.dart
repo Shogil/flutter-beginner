@@ -24,15 +24,30 @@ class _MyAppState extends State {
   final _questions = const [
     {
       'questionText': 'what\'s your favorite color?',
-      'answer': ['Red', 'blue', 'black', 'green'],
+      'answer': [
+        {'text': 'Red', 'score': 7},
+        {'text': 'blue', 'score': 5},
+        {'text': 'black', 'score': 10},
+        {'text': 'green', 'score': 4},
+      ],
     },
     {
       'questionText': 'what\'s your favorite Animal?',
-      'answer': ['Monkey', 'Lion', 'panda', 'Jiraffe'],
+      'answer': [
+        {'text': 'Rabbit', 'score': 7},
+        {'text': 'Snake', 'score': 5},
+        {'text': 'Elephant', 'score': 10},
+        {'text': 'Lion', 'score': 4},
+      ],
     },
     {
-      'questionText': 'what is your Place?',
-      'answer': ['Kerala', 'Goa', 'Tamil nadu', 'Karnataka'],
+      'questionText': 'what is your favorite Place?',
+      'answer': [
+        {'text': 'Kerala', 'score': 7},
+        {'text': 'Goa', 'score': 5},
+        {'text': 'Delhi', 'score': 10},
+        {'text': 'Chennai', 'score': 4},
+      ],
     }
   ];
   @override
