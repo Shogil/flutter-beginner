@@ -4,6 +4,7 @@ import 'package:flutter_sample_project/result.dart';
 
 void main() => runApp(MyApp());
 
+// ignore: use_key_in_widget_constructors
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -14,10 +15,13 @@ class MyApp extends StatefulWidget {
 //new
 class _MyAppState extends State {
   var _questionIndex = 0;
-  void _answerQuestion() {
+  var _totalScore = 0;
+  void _answerQuestion(int score) {
+    _totalScore = _totalScore + score;
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
+    // ignore: avoid_print
     print(_questionIndex);
   }
 
